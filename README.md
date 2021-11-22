@@ -9,3 +9,5 @@ git clone https://github.com/playXE/IcedPhoneNumbersUDP && cd IcedPhoneNumbersUD
 cargo build 
 ```
 Then run `cargo run --bin server` and `cargo run --bin client`. You would need to enter IpV4 addr for server to bind to when running it. And in client you would need to enter IpV4 addr for client itself and sevrer address. 
+
+[YouTube video](https://www.youtube.com/watch?v=ozdSIjQpP4E) - running this app to showcase it without need of downloading and building it. :D
