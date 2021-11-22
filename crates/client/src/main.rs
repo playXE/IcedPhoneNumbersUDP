@@ -228,8 +228,7 @@ impl Application for App {
                     if state.contacts.iter().any(|x| x.name == state.name_value) {
                         return Command::none();
                     }
-                    state.name_value.clear();
-                    state.number_value.clear();
+
                     state.socket.send_to(&instruction, &state.addr).unwrap();
                     state.contacts.push(Contact {
                         state: ContactState::Idle {
@@ -239,6 +238,8 @@ impl Application for App {
                         name: state.name_value.clone(),
                         number: state.number_value.clone(),
                     });
+                    state.name_value.clear();
+                    state.number_value.clear();
                 }
                 Message::ContactMessage(i, ContactMessage::Delete) => {
                     if state.contacts.len() > i {
